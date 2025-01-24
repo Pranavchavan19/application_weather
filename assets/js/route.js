@@ -14,10 +14,10 @@
  const currentLocation = function(){
     window.navigator.geolocation.getCurrentPosition(res => {
         const { latitude , longitude} = res.coords;
-        updateWeather(`lat=${latitude}&lon=${longitude}`);
+        // updateWeather(`lat=${latitude}&lon=${longitude}`);
 
 
-        // updateWeather(`lat=${latitude} , lon${longitude}`)
+        updateWeather(`lat=${latitude}` , `lon${longitude}`);
     }, err => {
         window.location.hash = defaultLocation;
     })
@@ -26,7 +26,7 @@
 
  /**
   * 
-  * @param {string} query  Searched location
+  * @param {string} query  Searched query
   */
 
  const searchedLocation = query => updateWeather(...query.split("&"));
@@ -46,7 +46,7 @@
     routes.get(route) ? routes.get(route)(query) : error404();
  }
 
- window.addEventListener("hashchange", checkHash)
+ window.addEventListener("hashchange", checkHash);
 
  window.addEventListener("load", function () {
     if(!window.location.hash){
