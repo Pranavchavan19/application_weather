@@ -63,7 +63,7 @@ searchField.addEventListener("input", function() {
         searchResult.innerHTML = `
                    <ul class="view-list" data-search-list>
                     <li class="view-item">
-                        <span class="m-icon">location-on</span>
+                        <span class="m-icon">location_on</span>
                         <div>
                             <p class="item-title">London</p>
                             <p class="label-2 item-subtitle">State Of London, GB</p>
@@ -80,7 +80,7 @@ searchField.addEventListener("input", function() {
             searchItem.classList.add("view-item");
 
             searchItem.innerHTML = `
-                  <span class="m-icon">location-on</span>
+                  <span class="m-icon">location_on</span>
                         <div>
                             <p class="item-title">${name}</p>
                             <p class="label-2 item-subtitle">${state || ""} ${country}</p>
@@ -157,7 +157,7 @@ export const updateWeather = function (lat , lon){
         visibility,
         timezone
 
-     } = currentWeather
+     } = currentWeather ;
 
      const [{description , icon}] = weather;
 
