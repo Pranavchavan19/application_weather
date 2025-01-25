@@ -152,7 +152,7 @@ export const updateWeather = function (lat , lon){
      const {
         weather,
         dt: dateUnix,
-        sys : { sunrise : sunriseUnixUTC=0, sunset : sunsetUnixUTC},
+        sys : { sunrise : sunriseUnixUTC, sunset : sunsetUnixUTC},
         main : { temp , feels_like , pressure , humidity},
         visibility,
         timezone
@@ -406,7 +406,7 @@ export const updateWeather = function (lat , lon){
                         </div>
 
                         <p class="label-1">${date.getDate()} ${module.monthNames[date.getUTCMonth()]}</p>
-                        <p class="label-1">${module.weekDayNames[date.getUTCDate()]}</p>
+                        <p class="label-1">${module.weekDayNames[date.getUTCDay()]}</p>
                         
             `;
 
