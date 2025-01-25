@@ -15,12 +15,30 @@
    * @param {Function} callback  callback
    */
 
-  export const fetchData = function(URL , callback){
+  // export const fetchData = function(URL , callback){
+  //   fetch(`${URL}&appid=${api_key}`)
+  //   .then(res => res.json())
+  //   .then(data => callback(data));
+  // }
+  export const fetchData = function (URL, callback) {
     fetch(`${URL}&appid=${api_key}`)
-    .then(res => res.json())
-    .then(data => callback(data));
-  }
-
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error(`HTTP error! Status: ${res.status}`);
+        }
+        return res.json();
+      })
+      .then((data) => {
+        if (!data || typeof data !== "object") {
+          throw new Error("Invalid data received from API");
+        }
+        callback(data);
+      })
+      .catch((error) => {
+        console.error("Fetch Error:", error.message);
+      });
+  };
+  
   
   export const url = {
     currentWeather(lat, lon){
