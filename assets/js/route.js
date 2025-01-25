@@ -27,7 +27,7 @@ const currentLocation = function() {
         const { latitude, longitude } = res.coords;
         
         // Pass latitude and longitude together as a query string or an object
-        updateWeather(`lat=${latitude}&lon=${longitude}`);
+        updateWeather(`lat=${latitude}`&`lon=${longitude}`);
     }, err => {
         window.location.hash = defaultLocation;  // Fallback to default location if geolocation fails
     });
