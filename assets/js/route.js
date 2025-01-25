@@ -11,16 +11,28 @@
   
  const defaultLocation = "#/weather?lat=51.5073219&lon=-0.1276474" // London
 
- const currentLocation = function(){
-    window.navigator.geolocation.getCurrentPosition(res => {
-        const { latitude , longitude} = res.coords;
-        // updateWeather(`lat=${latitude}&lon=${longitude}`);
-        updateWeather(`lat=${latitude}` , `lon${longitude}`);
-    }, err => {
-        window.location.hash = defaultLocation;
-    })
+//  const currentLocation = function(){
+//     window.navigator.geolocation.getCurrentPosition(res => {
+//         const { latitude , longitude} = res.coords;
+        
+//         updateWeather(`lat=${latitude}` , `lon${longitude}`);
+//     }, err => {
+//         window.location.hash = defaultLocation;
+//     })
 
- }
+//  }
+
+const currentLocation = function() {
+    window.navigator.geolocation.getCurrentPosition(res => {
+        const { latitude, longitude } = res.coords;
+        
+        // Pass latitude and longitude together as a query string or an object
+        updateWeather(`lat=${latitude}&lon=${longitude}`);
+    }, err => {
+        window.location.hash = defaultLocation;  // Fallback to default location if geolocation fails
+    });
+}
+
 
  /**
   * 
