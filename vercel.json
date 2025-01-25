@@ -1,0 +1,21 @@
+{
+    "version": 2,
+    "builds": [
+      {
+        "src": "index.html",
+        "use": "@vercel/static"
+      },
+      {
+        "src": "css/**/*",
+        "use": "@vercel/static"
+      },
+      {
+        "src": "js/**/*",
+        "use": "@vercel/static"
+      }
+    ],
+    "env": {
+        "api_key": "cf6a0b63b2625078a36c4987feb5909e"
+      }
+  }
+  
