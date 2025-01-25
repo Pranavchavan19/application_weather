@@ -24,8 +24,7 @@
   
   export const url = {
     currentWeather(lat, lon){
-    // return `https://api.openweathermap.org/data/2.5/weather?${lat}&${lon}&units=metric`
-    return `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric`;
+    return `https://api.openweathermap.org/data/2.5/weather?${lat}&${lon}&units=metric`
 
     },
     forecast(lat, lon){
