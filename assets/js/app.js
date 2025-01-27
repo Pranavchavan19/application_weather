@@ -1,8 +1,9 @@
-// /**
-//  * @license MIT
-//  * @copyright codewithsadee 2023 All rights reserved
-//  * @author codewithsadee <mohammadsadee24@gmail.com>
-//  */
+/**
+ * @license MIT
+ * @fileoverview All api related stuff like api_key, api request etc.
+ * @copyright PranavChavan 2025 All rights reserved
+ * @author PranavChavan <pranav1952000@gmail.com>
+ */
 
 `use strict`;
  
